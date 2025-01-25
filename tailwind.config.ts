@@ -10,8 +10,12 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "#1E232B",
+        background: "#1E232A",
+        "secondary-bg": "#292E35",
+        "footer-bg": "#15191E",
+        "text-primary": "#E5E5E5",
         "text-secondary": "#929292",
+        red: "#E74C3C",
       },
     },
   },

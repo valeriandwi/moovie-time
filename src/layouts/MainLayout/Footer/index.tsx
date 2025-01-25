@@ -3,7 +3,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <div className="h-[160px] bg-background px-[120px] flex space-x-[320px] justify-between items-center">
+    <div className="h-[160px] bg-footer-bg px-[120px] flex space-x-[320px] justify-between items-center">
       <p className="text-[13px] text-text-secondary">
         © 2021 MoovieTime. All rights reserved.
       </p>
