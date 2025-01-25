@@ -3,7 +3,12 @@ import React from "react";
 
 const MovieCard = () => {
   return (
-    <div className="flex flex-col space-y-[13px]">
+    <div className="flex flex-col w-[220px] space-y-[13px] static">
+      <div className="relative">
+        <p className="absolute right-0 top-3 bg-background opacity-80 text-white px-[10px] py-[5px] font-bold text-[18px]">
+          0.0
+        </p>
+      </div>
       <Image
         src="/movie-poster.png"
         className="bg-black"

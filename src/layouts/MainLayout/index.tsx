@@ -10,7 +10,7 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
   return (
     <div className="bg-background">
       <Header />
-      <div>{children}</div>
+      <div className="min-h-[calc(100vh-222px)]">{children}</div>
       <Footer />
     </div>
   );

@@ -1,0 +1,27 @@
+.slick-dots {
+  bottom: -52px;
+}
+
+.slick-dots li {
+  height: 12px;
+  width: 12px;
+  background-color: #8e9194;
+  border-radius: 9999px;
+  margin: 0 9px;
+  justify-content: center;
+  align-items: center;
+}
+
+.slick-dots li.slick-active {
+  height: 12px;
+  width: 60px;
+  background-color: #e74c3c !important;
+  border-radius: 6px;
+  margin: 0 9px;
+  justify-content: center;
+  align-items: center;
+}
+
+.slick-dots li button::before {
+  font-size: 0;
+}

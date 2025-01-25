@@ -24,5 +24,20 @@ export const theme: ThemeConfig | undefined = {
       defaultHoverColor: "#fff",
       primaryShadow: "transparent",
     },
+    Select: {
+      colorBgContainer: "#2F363F",
+      colorTextPlaceholder: "#E5E5E5",
+      colorPrimary: "#E5E5E5",
+      colorText: "#E5E5E5",
+      optionActiveBg: "#2F363F",
+      controlItemBgActive: "#2F363F",
+      colorBorder: "transparent",
+      activeBorderColor: "transparent",
+      hoverBorderColor: "transparent",
+    },
+    Checkbox: {
+      colorPrimary: "#E74C3C",
+      colorPrimaryHover: "#E74C3C",
+    },
   },
 };
