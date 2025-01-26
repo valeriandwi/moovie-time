@@ -1,6 +1,6 @@
 import StarIcon from "@/assets/StarIcon";
+import GenresDescription from "@/components/GenresDescription";
 import MovieImage from "@/components/MovieImage";
-import { IMAGE_PATH_URL } from "@/constants/constants";
 import clsx from "clsx";
 import dayjs from "dayjs";
 import React from "react";
@@ -11,7 +11,7 @@ interface SliderContentProps {
   rating: number;
   title: string;
   dateRelease: string;
-  genre: string[];
+  genre: number[];
   description: string;
   onClick: () => void;
 }
@@ -54,7 +54,7 @@ const SliderContent: React.FC<SliderContentProps> = ({
           <div className="text-[16px] flex flex-row space-x-2 items-center">
             <p>{dayjs(dateRelease).year()}</p>
             <div className="w-[6px] h-[6px] bg-gray rounded-full" />
-            <p>{genre.map((genre) => genre + ",")}</p>
+            <GenresDescription />
           </div>
           <p className="text-xs leading-[18px]">
             {description.slice(0, 200)}...

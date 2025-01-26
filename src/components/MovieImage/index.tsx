@@ -1,4 +1,5 @@
 import { IMAGE_PATH_URL } from "@/constants/constants";
+import clsx from "clsx";
 import Image from "next/image";
 import React from "react";
 
@@ -18,7 +19,8 @@ const MovieImage: React.FC<MovieImageProps> = ({
   if (!imageSrc) {
     return (
       <div
-        className={`bg-black ml-[124px] mb-[-114px] z-[99] w-[${width}px] h-[${height}px]`}
+        className={clsx(className, `bg-black`)}
+        style={{ width: width, height: height }}
       />
     );
   }

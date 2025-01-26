@@ -4,15 +4,15 @@ import { informationKeys } from "./constants";
 import { Divider } from "antd";
 
 interface DetailInformationProps extends DetailInformation {
-  rating: string;
+  rating?: string;
 }
 
 type DetailInformation = {
-  user_score: string;
-  status: string;
-  language: string;
-  budget: string;
-  production: string;
+  user_score?: string;
+  status?: string;
+  language?: string;
+  budget?: string;
+  production?: string;
 };
 
 type InformationKey = keyof DetailInformation;
