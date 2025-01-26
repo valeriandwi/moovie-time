@@ -6,3 +6,8 @@ export enum SORT_DROPDOWN {
   RATING_ASCENDING = "RATING_ASCENDING",
   RATING_DESCENDING = "RATING_DESCENDING",
 }
+
+export enum VIEW_BY {
+  POPULARITY = "popular",
+  RELEASE_DATE = "release_date",
+}

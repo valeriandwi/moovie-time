@@ -3,11 +3,19 @@ import React from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-import SliderContent from "./SliderContent";
 import "./index.css";
 
-const AppSlider = () => {
-  const [currentIndex, setCurrentIndex] = React.useState<number>(0);
+interface AppSliderProps {
+  children: React.ReactNode;
+  activeIndex?: number;
+  setActiveIndex?: React.Dispatch<React.SetStateAction<number>>;
+}
+
+const AppSlider: React.FC<AppSliderProps> = ({
+  children,
+  activeIndex,
+  setActiveIndex,
+}) => {
   const settings = {
     centerMode: true,
     infinite: true,
@@ -19,51 +27,16 @@ const AppSlider = () => {
     arrows: false,
   };
 
-  const dummyData = [
-    {
-      imageSrc: "/image0.jpg",
-      rating: "1",
-      title: "Title 0",
-      yearRelease: "2020",
-    },
-    {
-      imageSrc: "/image1.jpg",
-      rating: "2",
-      title: "Title 1",
-      yearRelease: "2021",
-    },
-    {
-      imageSrc: "/image2.jpg",
-      rating: "3",
-      title: "Title 2",
-      yearRelease: "2022",
-    },
-    {
-      imageSrc: "/image3.jpg",
-      rating: "4",
-      title: "Title 3",
-      yearRelease: "2023",
-    },
-  ];
-
   return (
     <div className="w-full">
       <Slider
         {...settings}
-        afterChange={(newIndex) => setCurrentIndex(newIndex)}
+        afterChange={(newIndex) => setActiveIndex && setActiveIndex(newIndex)}
+        ref={(slider) => {
+          slider?.slickGoTo(activeIndex ?? 0);
+        }}
       >
-        {dummyData.map((data, index) => (
-          <SliderContent
-            isCurrentIndex={currentIndex === index}
-            key={index}
-            imageSrc={data.imageSrc}
-            rating={data.rating}
-            title={data.title}
-            yearRelease={data.yearRelease}
-            description=""
-            genre=""
-          />
-        ))}
+        {children}
       </Slider>
     </div>
   );
