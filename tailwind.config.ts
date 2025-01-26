@@ -19,6 +19,15 @@ const config: Config = {
         "text-secondary": "#929292",
         red: "#E74C3C",
         gray: "#7f7f7f",
+        "light-gray": "#666666",
+      },
+      backgroundColor: {
+        card: "#F9F9F9",
+        "rating-card": "#EAEAEA",
+      },
+      fontSize: {
+        title: "36px",
+        subtitle: "14px",
       },
     },
   },

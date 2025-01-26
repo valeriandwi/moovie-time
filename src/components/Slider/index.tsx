@@ -7,6 +7,7 @@ import SliderContent from "./SliderContent";
 import "./index.css";
 
 const AppSlider = () => {
+  const [currentIndex, setCurrentIndex] = React.useState<number>(0);
   const settings = {
     centerMode: true,
     infinite: true,
@@ -47,9 +48,13 @@ const AppSlider = () => {
 
   return (
     <div className="w-full">
-      <Slider {...settings}>
+      <Slider
+        {...settings}
+        afterChange={(newIndex) => setCurrentIndex(newIndex)}
+      >
         {dummyData.map((data, index) => (
           <SliderContent
+            isCurrentIndex={currentIndex === index}
             key={index}
             imageSrc={data.imageSrc}
             rating={data.rating}

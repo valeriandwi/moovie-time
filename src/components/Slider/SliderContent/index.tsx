@@ -1,8 +1,10 @@
 import StarIcon from "@/assets/StarIcon";
+import clsx from "clsx";
 import Image from "next/image";
 import React from "react";
 
 interface SliderContentProps {
+  isCurrentIndex: boolean;
   imageSrc: string;
   rating: string;
   title: string;
@@ -12,6 +14,7 @@ interface SliderContentProps {
 }
 
 const SliderContent: React.FC<SliderContentProps> = ({
+  isCurrentIndex,
   imageSrc,
   rating,
   title,
@@ -20,7 +23,12 @@ const SliderContent: React.FC<SliderContentProps> = ({
   description,
 }) => {
   return (
-    <div className="pr-[17px] w-[541px] h-[364px]">
+    <div
+      className={clsx(
+        !isCurrentIndex && "opacity-50",
+        "pr-[17px] w-[541px] h-[364px]"
+      )}
+    >
       <div className="text-white flex flex-row h-full items-center">
         <Image
           src={imageSrc}
