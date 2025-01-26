@@ -16,6 +16,8 @@ const Recommendation: React.FC<RecommendationProps> = ({ datas }) => {
         <div className="grid max-lg:grid-cols-3 grid-cols-5 gap-[25px]">
           {datas?.map((value) => (
             <MovieCard
+              id={value.id.toString()}
+              genres={value.genre_ids?.join(", ")}
               key={value?.id}
               imageSrc={value?.poster_path}
               rating={value?.vote_average}

@@ -30,7 +30,7 @@ const MovieImage: React.FC<MovieImageProps> = ({
       className={className}
       alt="movie-poster"
       width={width}
-      height={330}
+      height={height}
     />
   );
 };

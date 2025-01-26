@@ -12,7 +12,7 @@ const FilterBy: React.FC<FilterByProps> = ({ viewBy }) => {
   const router = useRouter();
 
   const onClick = (viewBy: string) => {
-    router.push(`/${viewBy}`);
+    router.push(`/home/${viewBy}`);
   };
 
   return (
