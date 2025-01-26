@@ -38,17 +38,18 @@ export const sortDropdownOptions = [
 ];
 
 export const genreOptions = [
-  { key: "action", label: "Action", value: "action" },
-  { key: "adventure", label: "Adventure", value: "adventure" },
-  { key: "animation", label: "Animation", value: "animation" },
-  { key: "comedy", label: "Comedy", value: "comedy" },
-  { key: "crime", label: "Crime", value: "crime" },
-  { key: "documentary", label: "Documentary", value: "documentary" },
-  { key: "drama", label: "Drama", value: "drama" },
-  { key: "family", label: "Family", value: "family" },
-  { key: "fantasy", label: "Fantasy", value: "fantasy" },
-  { key: "history", label: "History", value: "history" },
-  { key: "horror", label: "Horror", value: "horror" },
+  { key: "action", label: "Action", value: "28" },
+  { key: "adventure", label: "Adventure", value: "12" },
+  { key: "animation", label: "Animation", value: "16" },
+  { key: "comedy", label: "Comedy", value: "35" },
+  { key: "crime", label: "Crime", value: "80" },
+  { key: "documentary", label: "Documentary", value: "99" },
+  { key: "drama", label: "Drama", value: "18" },
+  { key: "family", label: "Family", value: "10751" },
+  { key: "fantasy", label: "Fantasy", value: "14" },
+  { key: "history", label: "History", value: "36" },
+  { key: "horror", label: "Music", value: "10402" },
+  { key: "mystery", label: "Mystery", value: "964827" },
 ];
 
 export const viewByParams = {
