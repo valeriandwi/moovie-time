@@ -29,7 +29,7 @@ const MovieList: React.FC<MovieListProps> = ({ pageNumber, datas }) => {
   }, [datas, pageNumber]);
 
   return (
-    <div className="grid max-lg:grid-cols-3 grid-cols-5 gap-[25px]">
+    <div className="grid max-2xl:grid-cols-4 grid-cols-5 gap-[25px]">
       {currentDatas?.map((value) => (
         <MovieCard
           genres={value.genre_ids}

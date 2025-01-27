@@ -30,7 +30,7 @@ const SliderContent: React.FC<SliderContentProps> = ({
     <div
       className={clsx(
         !isCurrentIndex && "opacity-50",
-        "pr-[17px] w-[541px] h-[364px] cursor-pointer"
+        "pr-[17px] w-auto h-auto cursor-pointer"
       )}
       onClick={onClick}
     >
@@ -49,14 +49,16 @@ const SliderContent: React.FC<SliderContentProps> = ({
                 {rating?.toFixed(1) ?? 0.0}
               </p>
             </div>
-            <p className="text-[28px] font-medium">{title}</p>
+            <p className="2xl:text-[28px] font-medium max-2xl:text-xs">
+              {title}
+            </p>
           </div>
-          <div className="text-[16px] pr-[12px] flex flex-row space-x-2 items-center">
+          <div className="max-2xl:text-xs text-[16px] pr-[12px] flex flex-row space-x-2 items-center">
             <p>{dayjs(dateRelease).year()}</p>
             <div className="w-[6px] h-[6px] bg-gray rounded-full" />
             <p>{convertGenres(genre, 2)}</p>
           </div>
-          <p className="text-xs leading-[18px] pr-[21px] ">
+          <p className="max-2xl:text-[0.5em] text-xs leading-[18px] pr-[21px] ">
             {description.slice(0, 200)}...
           </p>
         </div>
