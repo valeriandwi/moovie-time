@@ -27,12 +27,14 @@ const MoviesPage = async ({
       <Title title="Movies" className="mb-[59px]" />
       <div className="flex flex-row space-x-[30px]">
         <Filter apiParams={apiParams} />
-        <MovieList
-          pageNumber={apiParams?.page}
-          datas={movieListData?.results || []}
-        />
+        <div className="flex flex-col justify-center">
+          <MovieList
+            pageNumber={apiParams?.page}
+            datas={movieListData?.results || []}
+          />
+          <LoadMoreButton apiParams={apiParams} />
+        </div>
       </div>
-      <LoadMoreButton apiParams={apiParams} />
     </>
   );
 };
