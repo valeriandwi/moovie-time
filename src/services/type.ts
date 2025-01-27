@@ -104,3 +104,10 @@ export type TMoviewReview = {
 };
 
 export type TMovieRecommendationResponse = TResponse<MovieData[]>;
+
+export type TMovieByKeyword = {
+  id: string;
+  name: string;
+};
+
+export type TMovieByKeywordResponse = TResponse<TMovieByKeyword[]>;

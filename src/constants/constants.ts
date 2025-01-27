@@ -1,7 +1,7 @@
 import { SORT_DROPDOWN, VIEW_BY } from "./enum";
 
-export const API_TOKEN = process.env.TMDB_API_TOKEN;
-export const API_URL = process.env.API_URL;
+export const API_TOKEN = process.env.NEXT_PUBLIC_TMDB_API_TOKEN;
+export const API_URL = process.env.NEXT_PUBLIC_API_URL;
 export const IMAGE_PATH_URL = "https://image.tmdb.org/t/p/original";
 
 export const sortDropdownOptions = [

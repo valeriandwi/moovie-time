@@ -1,6 +1,7 @@
 import { API_URL } from "@/constants/constants";
 import { fetchData } from "@/utils/fetch";
 import {
+  TMovieByKeywordResponse,
   TMovieByPopularityResponse,
   TMovieDetailResponse,
   TMovieRecommendationResponse,
@@ -53,6 +54,19 @@ export const getMovieRecommendations = async (id: string, params?: TParams) => {
   const response = await fetchData<TMovieRecommendationResponse>({
     url: `${API_URL}/movie/${id}/recommendations?language=en-US`,
     params: params,
+  });
+  return {
+    response,
+  };
+};
+
+export const getMovieByKeyword = async (keyword: string, params?: TParams) => {
+  const response = await fetchData<TMovieByKeywordResponse>({
+    url: `https://api.themoviedb.org/3/search/keyword`,
+    params: {
+      ...params,
+      query: keyword,
+    },
   });
   return {
     response,
