@@ -18,7 +18,7 @@ const MovieList: React.FC<MovieListProps> = ({ movieList }) => {
             title={title}
             releaseDate={release_date}
             imageSrc={poster_path}
-            genres={genre_ids?.join(", ")}
+            genres={genre_ids}
           />
         )
       )}

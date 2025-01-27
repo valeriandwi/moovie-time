@@ -16,7 +16,7 @@ const NowPlaying: React.FC<NowPlayingData> = ({ nowPlayingData }) => {
   };
 
   return (
-    <div className="w-full h-[512px] pt-[56px] pb-[47px]">
+    <div className="w-full relative h-[512px] pt-[56px] pb-[47px">
       <AppSlider setActiveIndex={setActiveIndex} activeIndex={activeIndex}>
         {nowPlayingData?.map((value, index) => (
           <SliderContent

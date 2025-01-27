@@ -9,11 +9,35 @@ import {
 } from "@/services/movies";
 import { convertRating } from "@/utils/utils";
 import dayjs from "dayjs";
-import React from "react";
+import React, { Suspense } from "react";
+import { Metadata } from "next";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { id: string };
+}): Promise<Metadata> {
+  const id = params.id;
+  const { response: movieDetailData } = await getMovieDetail(id);
+
+  return {
+    title: `${movieDetailData?.title}`,
+    description: movieDetailData?.overview,
+    openGraph: {
+      title: movieDetailData?.title,
+      description: movieDetailData?.overview,
+      images: [
+        {
+          url: movieDetailData?.backdrop_path as string,
+          alt: movieDetailData?.title,
+        },
+      ],
+    },
+  };
+}
 
 const DetailPage = async ({ params }: { params: Promise<{ id: string }> }) => {
   const id = (await params).id;
-
   const { response: movieDetailData } = await getMovieDetail(id);
   const { response: movieReviewData } = await getMovieReviews(id);
   const { response: movieRecommendationData } = await getMovieRecommendations(
@@ -22,7 +46,7 @@ const DetailPage = async ({ params }: { params: Promise<{ id: string }> }) => {
   );
 
   return (
-    <>
+    <Suspense>
       <DetailMovieInformation
         backdropImageSrc={movieDetailData?.backdrop_path}
         posterImageSrc={movieDetailData?.poster_path}
@@ -41,7 +65,7 @@ const DetailPage = async ({ params }: { params: Promise<{ id: string }> }) => {
         <Review reviews={movieReviewData?.results || []} />
       </div>
       <Recommendation datas={movieRecommendationData?.results || []} />
-    </>
+    </Suspense>
   );
 };
 

@@ -20,7 +20,6 @@ const AppSlider: React.FC<AppSliderProps> = ({
     centerMode: true,
     infinite: true,
     centerPadding: "20px",
-    variableWidth: true,
     slidesToShow: 3,
     speed: 500,
     dots: true,
@@ -28,7 +27,7 @@ const AppSlider: React.FC<AppSliderProps> = ({
   };
 
   return (
-    <div className="w-full">
+    <div className="w-full ">
       <Slider
         {...settings}
         afterChange={(newIndex) => setActiveIndex && setActiveIndex(newIndex)}

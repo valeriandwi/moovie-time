@@ -2,7 +2,7 @@ import React from "react";
 import dayjs from "dayjs";
 import MovieImage from "../MovieImage";
 import StarIcon from "@/assets/StarIcon";
-import { convertRating } from "@/utils/utils";
+import { convertGenres, convertRating } from "@/utils/utils";
 import AppButton from "../AppButton";
 import Link from "next/link";
 
@@ -11,7 +11,7 @@ interface MovieCardProps {
   rating: number;
   title: string;
   releaseDate: string;
-  genres: string;
+  genres: number[];
   imageSrc: string;
 }
 
@@ -33,13 +33,15 @@ const MovieCard: React.FC<MovieCardProps> = ({
         </div>
         <MovieImage imageSrc={imageSrc} />
       </div>
-      <div className="h-[330px] flex flex-col justify-center bg-black group-hover:bg-opacity-80 relative bg-opacity-0">
+      <div className="px-8 h-[330px] flex flex-col justify-center bg-black group-hover:bg-opacity-80 relative bg-opacity-0">
         <div className="opacity-0 group-hover:opacity-100 flex flex-col space-y-[45px] items-center justify-center transition-opacity duration-300 text-white">
           <div className="flex flex-row space-x-[10px] items-center">
             <StarIcon width="32" height="32" />
             <p className="lg-[24px] font-semibold ">{convertRating(rating)}</p>
           </div>
-          <p className="text-[18px] font-semibold">{genres}</p>
+          <p className="text-[18px] font-semibold text-center">
+            {convertGenres(genres)}
+          </p>
           <Link href={`/detail/${id}`}>
             <AppButton color="default" type="primary" className="!w-[107px]">
               VIEW

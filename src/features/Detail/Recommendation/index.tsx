@@ -1,5 +1,6 @@
 import MovieCard from "@/components/MovieCard";
 import { MovieData } from "@/services/type";
+import { convertGenres } from "@/utils/utils";
 import React from "react";
 
 interface RecommendationProps {
@@ -17,7 +18,7 @@ const Recommendation: React.FC<RecommendationProps> = ({ datas }) => {
           {datas?.map((value) => (
             <MovieCard
               id={value.id.toString()}
-              genres={value.genre_ids?.join(", ")}
+              genres={value?.genre_ids}
               key={value?.id}
               imageSrc={value?.poster_path}
               rating={value?.vote_average}

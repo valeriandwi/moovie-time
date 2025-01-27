@@ -17,11 +17,15 @@
   width: 60px;
   background-color: #e74c3c !important;
   border-radius: 6px;
-  margin: 0 9px;
+  margin: 0 18px;
   justify-content: center;
   align-items: center;
 }
 
 .slick-dots li button::before {
   font-size: 0;
+}
+
+.slick-slide {
+  height: auto;
 }
