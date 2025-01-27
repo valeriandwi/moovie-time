@@ -1,6 +1,5 @@
 import MovieCard from "@/components/MovieCard";
 import { MovieData } from "@/services/type";
-import { convertGenres } from "@/utils/utils";
 import React from "react";
 
 interface RecommendationProps {

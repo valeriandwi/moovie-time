@@ -1,4 +1,3 @@
-import AppButton from "@/components/AppButton";
 import Title from "@/components/Title";
 import Filter from "@/features/Movies/Filter";
 import LoadMoreButton from "@/features/Movies/LoadMoreButton";
@@ -7,10 +6,8 @@ import { getAllMovie } from "@/services/movies";
 import React from "react";
 
 const MoviesPage = async ({
-  params,
   searchParams,
 }: {
-  params: { slug: string };
   searchParams: { [key: string]: string };
 }) => {
   const apiParams = {

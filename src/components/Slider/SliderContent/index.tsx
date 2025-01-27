@@ -1,6 +1,6 @@
 import StarIcon from "@/assets/StarIcon";
-import GenresDescription from "@/components/GenresDescription";
 import MovieImage from "@/components/MovieImage";
+import { convertGenres } from "@/utils/utils";
 import clsx from "clsx";
 import dayjs from "dayjs";
 import React from "react";
@@ -41,7 +41,7 @@ const SliderContent: React.FC<SliderContentProps> = ({
           imageSrc={imageSrc}
           className="bg-secondary-bg h-full"
         />
-        <div className="bg-black h-[324px] w-[300px] text-white pl-[26px] pr-[21px] py-[26px] flex flex-col space-y-[11px]">
+        <div className="bg-black h-[324px] w-[300px] text-white pl-[26px] py-[26px] flex flex-col space-y-[11px]">
           <div>
             <div className="flex flex-row space-x-[5px] items-center">
               <StarIcon />
@@ -51,12 +51,12 @@ const SliderContent: React.FC<SliderContentProps> = ({
             </div>
             <p className="text-[28px] font-medium">{title}</p>
           </div>
-          <div className="text-[16px] flex flex-row space-x-2 items-center">
+          <div className="text-[16px] pr-[12px] flex flex-row space-x-2 items-center">
             <p>{dayjs(dateRelease).year()}</p>
             <div className="w-[6px] h-[6px] bg-gray rounded-full" />
-            <GenresDescription />
+            <p>{convertGenres(genre, 2)}</p>
           </div>
-          <p className="text-xs leading-[18px]">
+          <p className="text-xs leading-[18px] pr-[21px] ">
             {description.slice(0, 200)}...
           </p>
         </div>
